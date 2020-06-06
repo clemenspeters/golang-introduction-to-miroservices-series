@@ -14,3 +14,11 @@ and from another terminal run
 curl localhost:9090 | jq
 curl localhost:9090 -XDELETE -v | jq
 ```
+
+## Links
+
+Source: [https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_3](https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_3)
+
+RESTful best practices: [https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+
+encoding/json: [https://golang.org/pkg/encoding/json/](https://golang.org/pkg/encoding/json/)
