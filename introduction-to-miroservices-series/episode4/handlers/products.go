@@ -23,6 +23,7 @@ func (p *Products) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 
 	if r.Method == http.MethodPost {
 		p.addProduct(rw, r)
+		return
 	}
 
 	// catch all
