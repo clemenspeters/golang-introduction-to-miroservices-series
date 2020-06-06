@@ -9,7 +9,11 @@ import (
 	"time"
 
 	"github.com/clemenspeters/golang-tutorials/introduction-to-miroservices-series/episode5/handlers"
+	"github.com/gorilla/mux"
+	"github.com/nicholasjackson/env"
 )
+
+var bindAddress = env.String("BIND_ADDRESS", false, ":9090", "Bind address for the server")
 
 func main() {
 	l := log.New(os.Stdout, "product-api", log.LstdFlags)
@@ -18,8 +22,10 @@ func main() {
 	ph := handlers.NewProducts(l)
 
 	// create a new server mux and register the handlers
-	sm := http.NewServeMux()
-	sm.Handle("/", ph)
+	sm := mux.NewRouter()
+
+	getRouter := sm.Methods("GET").Subrouter()
+	getRouter.HandleFunc("/", ph.ServeHTTP)
 
 	s := &http.Server{
 		Addr:         ":9090",
