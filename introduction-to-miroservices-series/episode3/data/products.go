@@ -1,4 +1,4 @@
-package database
+package data
 
 // Product defines the structure for an API product
 type Product struct {
