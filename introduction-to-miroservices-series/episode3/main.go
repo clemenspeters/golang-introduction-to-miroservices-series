@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/clemenspeters/golang-tutorials/introduction-to-miroservices-series/episode2/handlers"
+	"github.com/clemenspeters/golang-tutorials/introduction-to-miroservices-series/episode3/handlers"
 )
 
 func main() {
