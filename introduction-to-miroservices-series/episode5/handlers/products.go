@@ -3,8 +3,10 @@ package handlers
 import (
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/clemenspeters/golang-tutorials/introduction-to-miroservices-series/episode5/data"
+	"github.com/gorilla/mux"
 )
 
 type Products struct {
@@ -38,12 +40,19 @@ func (p *Products) AddProduct(rw http.ResponseWriter, r *http.Request) {
 	data.AddProduct(prod)
 }
 
-func (p *Products) UpdateProducts(id int, rw http.ResponseWriter, r *http.Request) {
-	p.l.Println("Handle PUT products")
+func (p *Products) UpdateProducts(rw http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id, err := strconv.Atoi(vars["id"])
+	if err != nil {
+		http.Error(rw, "Unable to convert ID", http.StatusBadRequest)
+		return
+	}
+
+	p.l.Println("Handle PUT product", id)
 
 	prod := &data.Product{}
 
-	err := prod.FromJSON(r.Body)
+	err = prod.FromJSON(r.Body)
 	if err != nil {
 		http.Error(rw, "Unable to unmarshal json", http.StatusBadRequest)
 		return
