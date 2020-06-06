@@ -12,7 +12,7 @@ and from another terminal run
 
 ```bash
 curl localhost:9090 | jq
-curl localhost:9090 -d '{}'
+curl localhost:9090 -v -d '{}'
 ```
 
 ## Links
