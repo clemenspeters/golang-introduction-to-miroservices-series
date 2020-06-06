@@ -1,5 +1,7 @@
 package data
 
+import "time"
+
 // Product defines the structure for an API product
 type Product struct {
 	ID          int
