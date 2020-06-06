@@ -37,9 +37,9 @@ func (p *Products) GetProducts(rw http.ResponseWriter, r *http.Request) {
 func (p *Products) AddProduct(rw http.ResponseWriter, r *http.Request) {
 	p.l.Println("Handle POST products", r.Context().Value(KeyProduct{}))
 
-	prod := r.Context().Value(KeyProduct{}).(*data.Product)
+	prod := r.Context().Value(KeyProduct{}).(data.Product)
 
-	data.AddProduct(prod)
+	data.AddProduct(&prod)
 }
 
 func (p *Products) UpdateProducts(rw http.ResponseWriter, r *http.Request) {
