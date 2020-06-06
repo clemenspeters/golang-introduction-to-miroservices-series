@@ -10,5 +10,9 @@ func main() {
 		log.Println("Hello World")
 	})
 
+	http.HandleFunc("/goodbye", func(w http.ResponseWriter, r *http.Request) {
+		log.Println("Goodbye World")
+	})
+
 	http.ListenAndServe(":9090", nil)
 }

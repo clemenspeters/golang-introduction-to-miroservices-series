@@ -12,4 +12,5 @@ and from another terminal run
 
 ```bash
 curl localhost:9090
+curl localhost:9090/goodbye
 ```
