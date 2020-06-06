@@ -13,7 +13,7 @@ and from another terminal run
 ```bash
 curl localhost:9090 | jq
 curl localhost:9090 -v -d '{"id": 1, "name": "tea", "description": "A nice cup of tea."}'
-curl localhost:9090/1  -v -XPUT -d '{"id": 1, "name": "tea", "description": "A nice cup of tea5."}'
+curl localhost:9090/1  -v -X PUT -d '{"id": 1, "name": "tea", "description": "A nice cup of tea5."}'
 ```
 
 ## Links
