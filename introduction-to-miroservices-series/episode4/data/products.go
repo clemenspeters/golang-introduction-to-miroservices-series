@@ -34,6 +34,11 @@ func GetProducts() Products {
 	return productList
 }
 
+func getNextId() int {
+	lp := productList[len(productList)-1]
+	return lp.ID + 1
+}
+
 var productList = []*Product{
 	&Product{
 		ID:          1,
