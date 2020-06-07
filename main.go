@@ -8,6 +8,8 @@ import (
 	"os/signal"
 	"time"
 
+	"github.com/go-openapi/runtime/middleware"
+
 	"github.com/clemenspeters/golang-tutorials/introduction-to-miroservices-series/handlers"
 	"github.com/gorilla/mux"
 	"github.com/nicholasjackson/env"
@@ -36,6 +38,12 @@ func main() {
 	postRouter.HandleFunc("/", ph.AddProduct)
 	postRouter.Use(ph.MiddlewareProductValidation)
 
+	opts := middleware.RedocOpts{SpecURL: "/swagger.yaml"}
+	sh := middleware.Redoc(opts, nil)
+
+	getRouter.Handle("/docs", sh)
+	getRouter.Handle("/swagger.yaml", http.FileServer(http.Dir("./")))
+
 	// create a new server
 	s := http.Server{
 		Addr:         ":9090",
@@ -51,7 +59,10 @@ func main() {
 		if err != nil {
 			l.Fatal(err)
 		}
+
 	}()
+	l.Println("🚀 Running server on http://localhost:9090/")
+	l.Println("💡 Documentation on http://localhost:9090/docs")
 
 	// trap sigterm or interupt and gracefully shutdown the server
 	sigChan := make(chan os.Signal)
