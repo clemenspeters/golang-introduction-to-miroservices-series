@@ -1,6 +1,6 @@
-# Building Microservices with Go: 5. Gorilla framework for RESTful services
+# Building Microservices with Go: 6 JSON Validation
 
-[https://www.youtube.com/watch?v=DD3JlT_u0DM](https://www.youtube.com/watch?v=DD3JlT_u0DM)
+[https://www.youtube.com/watch?v=gE8\_-8KoOLc](https://www.youtube.com/watch?v=gE8_-8KoOLc)
 
 Run
 
@@ -18,4 +18,4 @@ curl localhost:9090/1  -v -X PUT -d '{"id": 1, "name": "tea", "description": "A 
 
 ## Links
 
-Source: [https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_5](https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_5)
+Source: [https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_6](https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_6)
