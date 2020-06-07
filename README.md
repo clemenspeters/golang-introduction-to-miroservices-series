@@ -1,4 +1,4 @@
-# Building Microservices with Go: 6 JSON Validation
+# Building Microservices with Go: 7 Documenting RESTful APIs with Swagger
 
 [https://www.youtube.com/watch?v=07XhTqE-j8k](https://www.youtube.com/watch?v=07XhTqE-j8k)
 
