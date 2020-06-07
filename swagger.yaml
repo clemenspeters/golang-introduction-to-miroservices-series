@@ -17,7 +17,9 @@ definitions:
         type: string
         x-go-name: Description
       id:
+        description: the id for the product
         format: int64
+        minimum: 1
         type: integer
         x-go-name: ID
       name:
