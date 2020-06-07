@@ -1,3 +1,18 @@
+// Package classification of Prodcut API calls
+//
+// Documentation for the Prodcut API
+//
+// Schemes: http
+// BasePath: /
+// version: 1.0.0
+//
+// Consumes:
+// - application/json
+//
+// Produces:
+// - application/json
+// swagger:meta
+
 package handlers
 
 import (
