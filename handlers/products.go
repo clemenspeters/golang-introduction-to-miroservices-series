@@ -12,7 +12,6 @@
 // Produces:
 // - application/json
 // swagger:meta
-
 package handlers
 
 import (
