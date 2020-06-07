@@ -1,6 +1,6 @@
 # Building Microservices with Go: 6 JSON Validation
 
-[https://www.youtube.com/watch?v=gE8\_-8KoOLc](https://www.youtube.com/watch?v=gE8_-8KoOLc)
+[https://www.youtube.com/watch?v=07XhTqE-j8k](https://www.youtube.com/watch?v=07XhTqE-j8k)
 
 Run
 
@@ -18,4 +18,4 @@ curl localhost:9090/1  -v -X PUT -d '{"name": "Water", "sku": "abc-ab-water", "p
 
 ## Links
 
-Source: [https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_6](https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_6)
+Source: [https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_7](https://github.com/nicholasjackson/building-microservices-youtube/tree/episode_7)
