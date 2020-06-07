@@ -1,6 +1,6 @@
-// Package classification of Prodcut API calls
+// Package classification of Product API calls
 //
-// Documentation for the Prodcut API
+// Documentation for the Product API
 //
 // Schemes: http
 // BasePath: /
