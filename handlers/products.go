@@ -56,7 +56,7 @@ func (p *Products) GetProducts(rw http.ResponseWriter, r *http.Request) {
 	lp := data.GetProducts()
 
 	// serialize the list to JSON
-	err := lp.ToJSON(rw)
+	err := data.ToJSON(lp, rw)
 	if err != nil {
 		http.Error(rw, "Unable to convert json", http.StatusInternalServerError)
 	}
@@ -101,7 +101,7 @@ func (p Products) MiddlewareProductValidation(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 		prod := data.Product{}
 
-		err := prod.FromJSON(r.Body)
+		err := data.FromJSON(prod, r.Body)
 		if err != nil {
 			p.l.Println("Error:", err)
 			http.Error(rw, "Unable to unmarshal json", http.StatusBadRequest)
